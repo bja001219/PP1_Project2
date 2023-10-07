@@ -1,11 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0    ">
     <title>Final Project2</title>
+    <style>
+        body {
+            font: 100% Lucida Sans, Verdana;
+            margin: 20px;
+            line-height: 26px;
+            background-color: #444;
+        }
+        
+        .container {
+            min-width: 900px;
+        }
+        
+        .wrapper {
+            position: relative;
+            overflow: auto;
+        }
+        
+        #top, #sidebar, #bottom, .menuitem {
+            border-radius: 4px;
+            margin: 4px;
+        }
+        
+        #top {
+            background-color: #222;
+            color: #ffffff;
+            padding: 15px;
+        }
+        
+        #menubar {
+            width: 200px;
+            float: left
+        }
+        
+        #main {
+            padding: 10px;
+            margin: 0 210px;
+        }
+        
+        #sidebar {
+            background-color: rgb(111, 0, 255);
+            color: #ffffff;
+            padding: 10px;
+            width: 180px;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            position: absolute;
+        }
+            
+        #bottom {
+            border: 1px solid #d4d4d4;
+            background-color: #999;
+            text-align: center;
+            padding: 2px;
+            font-size: 70%;
+            line-height: 14px;
+        }
+        
+        #top h1, #top p, #menulist {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menuitem {
+            background-color: #f1f1f1;
+            border: 1px solid #d4d4d4;
+            list-style-type: none;
+            padding: 2px;
+            cursor: pointer;
+        }
+        
+        .menuitem:hover {
+            background-color: #ffffff;
+        }
+        
+        .menuitem:first-child {
+        background-color:navy;
+        color: white;
+        font-weight:bold;
+        }
+        
+        a {
+            color: #000000;
+            text-decoration: underline;
+        }
+        
+        a:hover {
+            text-decoration: none;
+        }
+        
+        
+        @media (max-width: 800px) {
+            #sidebar {
+                width: auto;
+                position: relative;
+            } 
+            #main {
+                margin-right: 0;
+            }    
+            
+        }
+        
+        @media (max-width: 600px) {
+            #menubar {
+                width: auto;
+                float: none;
+            }
+            #main {
+                margin: 0;
+            }    
+        }
+    </style>
+    
 </head>
 <body>
-    
+    <div class = "container wrapper"> 
+        <div id = "top">
+            <h1 > 21600328's Recommended Restaurants </h1>
+        </div>
+        <div class = "wrapper"> 
+            <div id="menubar">
+                <ul id="menulist"> 
+                    <li class="menuitem" onclick="location.href='add'"> Add </li>
+                    <li class="menuitem" onclick="location.href='edit'">Edit</li>
+                    <li class="menuitem" onclick="location.href='view'">View</li>
+                </ul>    
+            </div>
+            <div id="main"> 
+                <h1> This is the list of restaurants</h1>
+                <p> 
+                    <br> 
+                        <a href="add">Add</a>, 
+                        <a href="edit">Edit</a>,
+                        <a href="view"> View</a>.
+                    </br>
+                </p>
+                    <br> 
+                        <a href="nostyle">이건 버튼으로</a>.
+                    </br>
+                </p>
+            </div>
+            <div id = "sidebar"> 
+                <h1 style= "color: white"> 주관적 </h1>
+                <p style= "color: white"> .</p>
+            </div>
+        </div>
+        <div id = "bottom">
+            <p> 여기는 리스트 꽉차면 1,2,3 페이지 옮기는곳.</p>
+        </div>
+    </div>
 </body>
 </html>
