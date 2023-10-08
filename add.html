@@ -52,16 +52,17 @@
             background-color: #222;
             color: #ffffff;
             padding: 15px;
+            overflow: hidden;  /* This is added to clear the float */
         }
         
         #menubar {
-            width: 200px;
+            width: 2px;
             float: left
         }
         
         #main {
             padding: 10px;
-            margin: 0 210px;
+            margin: 0;
         }
         
         #sidebar {
@@ -81,21 +82,16 @@
         }
         
         .menuitem {
+            display: inline-block;
             background-color: #f1f1f1;
             border: 1px solid #d4d4d4;
-            list-style-type: none;
-            padding: 2px;
+            padding: 2px 10px;
             cursor: pointer;
+            margin-left: 10px;
         }
         
         .menuitem:hover {
             background-color: #ffffff;
-        }
-
-        .menuitem:first-child {
-        background-color:navy;
-        color: white;
-        font-weight:bold;
         }
         
         a {
@@ -106,7 +102,12 @@
         a:hover {
             text-decoration: none;
         }
-        
+        #menulist {
+        float: right;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
         
         @media (max-width: 800px) {
             #sidebar {
@@ -134,27 +135,25 @@
     <div class = "container wrapper"> 
         <div id = "top">
             <h1 > 21600328's Recommended Restaurants </h1>
+            <ul id="menulist"> 
+            	<li class="menuitem" onclick="location.href='edit.html'" style="color:#000000">Edit</li>
+            	<li class="menuitem" onclick="location.href='Index.html'" style="color:#000000">Index</li>
+        	</ul>  
         </div>
         <div class = "wrapper"> 
-            <div id="menubar">
-                <ul id="menulist"> 
-                    <li class="menuitem" onclick="location.href='add.html'"> Add </li>
-                    <li class="menuitem" onclick="location.href='edit.html'">Edit</li>
-                    <li class="menuitem" onclick="location.href='view.html'">View</li>
-                </ul>    
-            </div>
+        
             <div id="main"> 
                 <h1> Add new restaurant</h1>
                 <p> 
                     <br> 
                         <h2>새로운 식당</h2>
-                        <form name="form1" method="post" action="add.html">
+                        <form name="form1" method="post" action="index.html">
                             식당 이름 : <input type="text" name="RName" id ="RName"/> <br>
-                            별점 : <input type="radio" id="Rating" name="Rating" value="1">1
-                            <input type="radio" id="Rating" name="Rating" value="2">2
-                            <input type="radio" id="Rating" name="Rating" value="3">3
-                            <input type="radio" id="Rating" name="Rating" value="4">4
-                            <input type="radio" id="Rating" name="Rating" value="5">5 <br>
+                            별점 : <input type="radio" id="Rating" name="Rating" value="1">★
+                            <input type="radio" id="Rating" name="Rating" value="2">★★
+                            <input type="radio" id="Rating" name="Rating" value="3">★★★
+                            <input type="radio" id="Rating" name="Rating" value="4">★★★★
+                            <input type="radio" id="Rating" name="Rating" value="5">★★★★★ <br>
                             가격대 : <input type="text" name="Price" id ="Price"/> <br>
                             종류 : <select name = "type" id = "type">
                                 <optgroup label="음식 종류">

@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0    ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project2</title>
+    <script>
+        function checkValue(){ 
+            if(confirm("게시물을 수정할까요?")){
+                var RName = document.getElementById('RName').value;
+                var selectedRating = document.querySelector('input[name="Rating"]:checked');
+                var Price = document.getElementById('Price').value;
+                if(RName == ""){
+                    alert("식당 이름을 입력하세요!");
+                    return;
+                }
+                if (!selectedRating) {
+                    alert("별점을 선택하세요!");
+                    return;
+                }
+                if(Price == ""){
+                    alert("가격대를 입력하세요!");
+                    return;
+                }
+                alert("게시물이 수정됐습니다.")
+                document.form1.submit();
+            }
+            else{
+
+            }
+            
+        }
+    </script>
+
     <style>
         body {
             font: 100% Lucida Sans, Verdana;
@@ -31,16 +58,17 @@
             background-color: #222;
             color: #ffffff;
             padding: 15px;
+            overflow: hidden;  /* This is added to clear the float */
         }
         
         #menubar {
-            width: 200px;
+            width: 2px;
             float: left
         }
         
         #main {
             padding: 10px;
-            margin: 0 210px;
+            margin: 0;
         }
         
         #sidebar {
@@ -53,15 +81,6 @@
             right: 0;
             position: absolute;
         }
-            
-        #bottom {
-            border: 1px solid #d4d4d4;
-            background-color: #999;
-            text-align: center;
-            padding: 2px;
-            font-size: 70%;
-            line-height: 14px;
-        }
         
         #top h1, #top p, #menulist {
             margin: 0;
@@ -69,18 +88,19 @@
         }
         
         .menuitem {
+            display: inline-block;
             background-color: #f1f1f1;
             border: 1px solid #d4d4d4;
-            list-style-type: none;
-            padding: 2px;
+            padding: 2px 10px;
             cursor: pointer;
+            margin-left: 10px;
         }
         
         .menuitem:hover {
             background-color: #ffffff;
         }
-        
-        .menuitem:nth-child(2) {
+
+        .menuitem:first-child {
         background-color:navy;
         color: white;
         font-weight:bold;
@@ -94,7 +114,12 @@
         a:hover {
             text-decoration: none;
         }
-        
+        #menulist {
+          float: right;
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+      }
         
         @media (max-width: 800px) {
             #sidebar {
@@ -117,43 +142,63 @@
             }    
         }
     </style>
-    
 </head>
 <body>
     <div class = "container wrapper"> 
         <div id = "top">
             <h1 > 21600328's Recommended Restaurants </h1>
+            <ul id="menulist"> 
+            	<li class="menuitem" onclick="location.href='edit.html'">Edit</li>
+            	<li class="menuitem" onclick="location.href='Index.html'" style="color:#000000">Index</li>
+        	</ul>  
         </div>
+        
         <div class = "wrapper"> 
-            <div id="menubar">
-                <ul id="menulist"> 
-                    <li class="menuitem" onclick="location.href='add.html'"> Add </li>
-                    <li class="menuitem" onclick="location.href='edit.html'">Edit</li>
-                    <li class="menuitem" onclick="location.href='view.html'">View</li>
-                </ul>   
-            </div>
             <div id="main"> 
-                <h1> This is the list of restaurants</h1>
+                <h1> Edit 식당1</h1>
                 <p> 
+                    <p style="background-color: rgba(255, 60, 0, 0.918); display:block; width: 300px">식당 정보 <br>
+                        식당 이름: 식당1 <br>
+                        별점: ★★★★★ <br>  
+                        가격: $ <br>
+                        종류: 한식
+                    </p>
                     <br> 
-                        <a href="add">Add</a>, 
-                        <a href="edit">Edit</a>,
-                        <a href="view"> View</a>.
-                    </br>
-                </p>
-                    <br> 
-                        <a href="nostyle">이건 버튼으로</a>.
+                        <form name="form1" method="post" action="index.html">
+                            식당 이름 : <input type="text" name="RName" id ="RName"/> <br>
+                            별점 : <input type="radio" id="Rating" name="Rating" value="1">★
+                            <input type="radio" id="Rating" name="Rating" value="2">★★
+                            <input type="radio" id="Rating" name="Rating" value="3">★★★
+                            <input type="radio" id="Rating" name="Rating" value="4">★★★★
+                            <input type="radio" id="Rating" name="Rating" value="5">★★★★★<br>
+                            가격대 : <input type="text" name="Price" id ="Price"/> <br>
+                            종류 : <select name = "type" id = "type">
+                                <optgroup label="음식 종류">
+                                    <option value="Korea">한식</option>
+                                    <option value="China">중식</option>
+                                    <option value="Japan">일식</option>
+                                    <option value="Europe">양식</option>
+                            </select> <br>
+                            <p>비고 및 평가란</p>
+                            <p> <textarea name="message" rows="10" cols="30"> </textarea> </p>
+                            <input type="button" value="수정" id ="loginbutton" onclick="checkValue()">
+                            
+                        </form>
                     </br>
                 </p>
             </div>
             <div id = "sidebar"> 
-                <h1 style= "color: white"> 주관적 </h1>
-                <p style= "color: white"> .</p>
+                <h1 style= "color: white"> 설명 </h1>
+                <p style= "color: white"> 
+                $ = 1인당 10,000만원 이하 <br>
+                $$ = 1인당 10,000만원 이상 30,000이하 <br>
+                $$$ = 1인당 30,000만원 이상 <br>
+                <br>
+                비고란은 해당 음식점의 특이사항
+                </p>
             </div>
         </div>
-        <div id = "bottom">
-            <p> 여기는 리스트 꽉차면 1,2,3 페이지 옮기는곳.</p>
-        </div>
     </div>
+    
 </body>
 </html>

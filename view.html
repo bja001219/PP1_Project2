@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0    ">
     <title>Final Project2</title>
+    <script>
+        function Delete(){ 
+            if (confirm("정말 삭제하시겠습니까?")) {
+                document.form1.submit();
+            }else{
+            }
+        }
+    </script>
     <style>
         body {
             font: 100% Lucida Sans, Verdana;
@@ -137,51 +145,39 @@
         </div>
         <div class = "wrapper"> 
             <div id="main"> 
-                <h1>This is the list of restaurants</h1>
+                <h1>식당 1의 디테일</h1>
+                <p> 별점: ★★★★★, 
+                    위치: 서울특별시 강남구... <br>
+                    매장 전화번호: 010-0000-0000 예약 시 전화 주세요<br>
+                    영업시간: 매일 09:00~19:00
+                </p> 
                 <table>
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Rating</th>
-                            <th>Pricing</th>
-                            <th>Type</th>
-                            <th>Other Details</th>
+                            <th>메뉴 이름</th>
+                            <th>가격</th>
+                            <th>이미지</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>식당1</td>
-                            <td>5</td>
-                            <td>$$$</td>
-                            <td>한식</td>
-                            <td></td>
+                            <td>불고기</td>
+                            <td>10,000원</td>
                         </tr>
                         <tr>
-                            <td>식당2</td>
-                            <td>4</td>
-                            <td>$$</td>
-                            <td>중식</td>
-                            <td>음식이 싱거움</td>
+                            <td>제육볶음</td>
+                            <td>10,000원</td>
                         </tr>
                         <tr>
-                            <td>식당1</td>
-                            <td>3</td>
-                            <td>$$$</td>
-                            <td>양식</td>
-                            <td>음식이 짬</td>
-                        </tr>
-                        <tr>
-                            <td>식당1</td>
-                            <td>1</td>
-                            <td>$</td>
-                            <td>일식</td>
-                            <td>맛없음</td>
+                            <td>비빕밥</td>
+                            <td>8,000원</td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="table-buttons">
-                    <button onclick="location.href='add.html'">Add</button>
+                    <button onclick="Delete()"> Delete </button>
                     <button onclick="location.href='edit.html'">Edit</button>
+                    <button onclick="location.href='Index.html'">Index</button>
                 </div>
             </div>
             <div id = "sidebar"> 
