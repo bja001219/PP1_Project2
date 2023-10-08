@@ -6,18 +6,24 @@
     <title>Final Project2</title>
     <script>
         function checkValue(){ 
-                var userID = document.getElementById('userID').value;
-                var password = document.getElementById('password').value;
-                if(userID == ""){
-                    alert("UserID를 입력하세요!");
-                    return;
-                }
-                if(password == ""){
-                    alert("암호를 입력하세요!");
-                    return;
-                }
-                document.form1.submit();
+            var RName = document.getElementById('RName').value;
+            var selectedRating = document.querySelector('input[name="Rating"]:checked');
+            var Price = document.getElementById('Price').value;
+            if(RName == ""){
+                alert("식당 이름을 입력하세요!");
+                return;
             }
+            if (!selectedRating) {
+                alert("별점을 선택하세요!");
+                return;
+            }
+            if(Price == ""){
+                alert("가격대를 입력하세요!");
+                return;
+            }
+            alert("게시물이 추가됩니다.")
+            document.form1.submit();
+        }
     </script>
 
     <style>
@@ -94,6 +100,12 @@
         .menuitem:hover {
             background-color: #ffffff;
         }
+
+        .menuitem:first-child {
+        background-color:navy;
+        color: white;
+        font-weight:bold;
+        }
         
         a {
             color: #000000;
@@ -146,9 +158,13 @@
                     <br> 
                         <h2>새로운 식당</h2>
                         <form name="form1" method="post" action="add.html">
-                            식당 이름 : <input type="text" name="userID" id ="userID"/> <br>
-                            별점 : <input type="text" name="pwd" id="password" /> <br>
-                            가격대 : <input type="text" name="userID" id ="userID"/> <br>
+                            식당 이름 : <input type="text" name="RName" id ="RName"/> <br>
+                            별점 : <input type="radio" id="Rating" name="Rating" value="1">1
+                            <input type="radio" id="Rating" name="Rating" value="2">2
+                            <input type="radio" id="Rating" name="Rating" value="3">3
+                            <input type="radio" id="Rating" name="Rating" value="4">4
+                            <input type="radio" id="Rating" name="Rating" value="5">5 <br>
+                            가격대 : <input type="text" name="Price" id ="Price"/> <br>
                             종류 : <select name = "type" id = "type">
                                 <optgroup label="음식 종류">
                                     <option value="Korea">한식</option>
@@ -156,12 +172,10 @@
                                     <option value="Japan">일식</option>
                                     <option value="Europe">양식</option>
                             </select> <br>
-                            <input type="button" value="로그인" id ="loginbutton" onclick="checkValue()">
-                            <img src="./img/voca.png" width ="10">
                             <p>비고 및 평가란</p>
-                            <p>
-                                <textarea name="message" rows="10" cols="30"> </textarea>
-                            </p>
+                            <p> <textarea name="message" rows="10" cols="30"> </textarea> </p>
+                            <input type="button" value="추가" id ="loginbutton" onclick="checkValue()">
+                            
                         </form>
                     </br>
                 </p>
