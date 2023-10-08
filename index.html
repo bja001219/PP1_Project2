@@ -33,51 +33,22 @@
             padding: 15px;
         }
         
-        #menubar {
-            width: 200px;
-            float: left
-        }
-        
         #main {
             padding: 10px;
-            margin: 0 210px;
+            margin: 0;
         }
-        
-        #sidebar {
-            background-color: rgb(111, 0, 255);
-            color: #ffffff;
-            padding: 10px;
-            width: 180px;
-            bottom: 0;
-            top: 0;
-            right: 0;
-            position: absolute;
+
+        th, td {
+            padding: 8px;
+            text-align: left;
         }
-            
-        #bottom {
-            border: 1px solid #d4d4d4;
-            background-color: #999;
-            text-align: center;
-            padding: 2px;
-            font-size: 70%;
-            line-height: 14px;
+
+        th {
+            background-color: #ddd;
         }
-        
         #top h1, #top p, #menulist {
             margin: 0;
             padding: 0;
-        }
-        
-        .menuitem {
-            background-color: #f1f1f1;
-            border: 1px solid #d4d4d4;
-            list-style-type: none;
-            padding: 2px;
-            cursor: pointer;
-        }
-        
-        .menuitem:hover {
-            background-color: #ffffff;
         }
         
         a {
@@ -100,16 +71,27 @@
             }    
             
         }
-        
-        @media (max-width: 600px) {
-            #menubar {
-                width: auto;
-                float: none;
-            }
-            #main {
-                margin: 0;
-            }    
+ 
+        .table-buttons {
+          margin-top: 20px;
+          text-align: left;
         }
+
+        .table-buttons button {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        .table-buttons button:hover {
+            background-color: #555;
+        }   
+        
     </style>
     
 </head>
@@ -119,34 +101,14 @@
             <h1 > 21600328's Recommended Restaurants </h1>
         </div>
         <div class = "wrapper"> 
-            <div id="menubar">
-                <ul id="menulist"> 
-                    <li class="menuitem" onclick="location.href='add'"> Add </li>
-                    <li class="menuitem" onclick="location.href='edit'">Edit</li>
-                    <li class="menuitem" onclick="location.href='view'">View</li>
-                </ul>    
-            </div>
             <div id="main"> 
-                <h1> This is the list of restaurants</h1>
-                <p> 
-                    <br> 
-                        <a href="add">Add</a>, 
-                        <a href="edit">Edit</a>,
-                        <a href="view"> View</a>.
-                    </br>
-                </p>
-                    <br> 
-                        <a href="nostyle">이건 버튼으로</a>.
-                    </br>
-                </p>
+                <h1>This is the page of J's restaurants favor</h1>
+                <div class="table-buttons">
+                    <button onclick="location.href='view.html'">View</button>
+                    <button onclick="location.href='add.html'">Add</button>
+                    <button onclick="location.href='edit.html'">Edit</button>
+                </div>
             </div>
-            <div id = "sidebar"> 
-                <h1 style= "color: white"> 주관적 </h1>
-                <p style= "color: white"> .</p>
-            </div>
-        </div>
-        <div id = "bottom">
-            <p> 여기는 리스트 꽉차면 1,2,3 페이지 옮기는곳.</p>
         </div>
     </div>
 </body>

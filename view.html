@@ -33,21 +33,37 @@
             padding: 15px;
         }
         
-        #menubar {
-            width: 200px;
-            float: left
-        }
-        
         #main {
             padding: 10px;
-            margin: 0 210px;
+            margin: 0;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ddd;
         }
         
         #sidebar {
             background-color: rgb(111, 0, 255);
+            font-size: 9px;
             color: #ffffff;
             padding: 10px;
-            width: 180px;
+            width: 150px;
+            height: 200px;
             bottom: 0;
             top: 0;
             right: 0;
@@ -55,35 +71,19 @@
         }
             
         #bottom {
+            margin-left: 350px;
+            width: 10%;
             border: 1px solid #d4d4d4;
             background-color: #999;
             text-align: center;
-            padding: 2px;
+            padding: 1px;
             font-size: 70%;
-            line-height: 14px;
+            line-height: 1px;
         }
         
         #top h1, #top p, #menulist {
             margin: 0;
             padding: 0;
-        }
-        
-        .menuitem {
-            background-color: #f1f1f1;
-            border: 1px solid #d4d4d4;
-            list-style-type: none;
-            padding: 2px;
-            cursor: pointer;
-        }
-        
-        .menuitem:hover {
-            background-color: #ffffff;
-        }
-        
-        .menuitem:nth-child(3) {
-        background-color:navy;
-        color: white;
-        font-weight:bold;
         }
         
         a {
@@ -106,16 +106,27 @@
             }    
             
         }
-        
-        @media (max-width: 600px) {
-            #menubar {
-                width: auto;
-                float: none;
-            }
-            #main {
-                margin: 0;
-            }    
+ 
+        .table-buttons {
+          margin-top: 20px;
+          text-align: right;
         }
+
+        .table-buttons button {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        .table-buttons button:hover {
+            background-color: #555;
+        }   
+        
     </style>
     
 </head>
@@ -125,35 +136,71 @@
             <h1 > 21600328's Recommended Restaurants </h1>
         </div>
         <div class = "wrapper"> 
-            <div id="menubar">
-                <ul id="menulist"> 
-                    <li class="menuitem" onclick="location.href='add'"> Add </li>
-                    <li class="menuitem" onclick="location.href='edit'">Edit</li>
-                    <li class="menuitem" onclick="location.href='view'">View</li>
-                </ul>    
-            </div>
             <div id="main"> 
-                <h1> This is the list of restaurants</h1>
-                <p> 
-                    <br> 
-                        <a href="add">Add</a>, 
-                        <a href="edit">Edit</a>,
-                        <a href="view"> View</a>.
-                        <img src="./img/voca.png" width ="10">
-                    </br>
-                </p>
-                    <br> 
-                        <a href="nostyle">이건 버튼으로</a>.
-                    </br>
-                </p>
+                <h1>This is the list of restaurants</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Rating</th>
+                            <th>Pricing</th>
+                            <th>Type</th>
+                            <th>Other Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>식당1</td>
+                            <td>5</td>
+                            <td>$$$</td>
+                            <td>한식</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>식당2</td>
+                            <td>4</td>
+                            <td>$$</td>
+                            <td>중식</td>
+                            <td>음식이 싱거움</td>
+                        </tr>
+                        <tr>
+                            <td>식당1</td>
+                            <td>3</td>
+                            <td>$$$</td>
+                            <td>양식</td>
+                            <td>음식이 짬</td>
+                        </tr>
+                        <tr>
+                            <td>식당1</td>
+                            <td>1</td>
+                            <td>$</td>
+                            <td>일식</td>
+                            <td>맛없음</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-buttons">
+                    <button onclick="location.href='add.html'">Add</button>
+                    <button onclick="location.href='edit.html'">Edit</button>
+                </div>
             </div>
             <div id = "sidebar"> 
-                <h1 style= "color: white"> 주관적 </h1>
-                <p style= "color: white"> .</p>
+                <h1 style= "color: white"> 설명 </h1>
+                <p style= "color: white"> 
+                $ = 1인당 10,000만원 이하 <br>
+                $$ = 1인당 10,000만원 이상 30,000이하 <br>
+                $$$ = 1인당 30,000만원 이상 <br>
+                <br>
+                비고란은 해당 음식점의 특이사항
+                </p>
             </div>
         </div>
         <div id = "bottom">
-            <p> 여기는 리스트 꽉차면 1,2,3 페이지 옮기는곳.</p>
+            <p> 
+                <a href="1 page">1  </a>
+                <a href="2 page">2  </a>
+                <a href="3 page">3  </a>
+            </p>
         </div>
     </div>
 </body>
