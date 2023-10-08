@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0    ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project2</title>
+    <script>
+        function checkValue(){ 
+                var userID = document.getElementById('userID').value;
+                var password = document.getElementById('password').value;
+                if(userID == ""){
+                    alert("UserID를 입력하세요!");
+                    return;
+                }
+                if(password == ""){
+                    alert("암호를 입력하세요!");
+                    return;
+                }
+                document.form1.submit();
+            }
+    </script>
+
     <style>
         body {
             font: 100% Lucida Sans, Verdana;
@@ -80,12 +95,6 @@
             background-color: #ffffff;
         }
         
-        .menuitem:first-child {
-        background-color:navy;
-        color: white;
-        font-weight:bold;
-        }
-        
         a {
             color: #000000;
             text-decoration: underline;
@@ -117,7 +126,6 @@
             }    
         }
     </style>
-    
 </head>
 <body>
     <div class = "container wrapper"> 
@@ -133,16 +141,28 @@
                 </ul>    
             </div>
             <div id="main"> 
-                <h1> This is the list of restaurants</h1>
+                <h1> Add new restaurant</h1>
                 <p> 
                     <br> 
-                        <a href="add">Add</a>, 
-                        <a href="edit">Edit</a>,
-                        <a href="view"> View</a>.
-                    </br>
-                </p>
-                    <br> 
-                        <a href="nostyle">이건 버튼으로</a>.
+                        <h2>새로운 식당</h2>
+                        <form name="form1" method="post" action="add.html">
+                            식당 이름 : <input type="text" name="userID" id ="userID"/> <br>
+                            별점 : <input type="text" name="pwd" id="password" /> <br>
+                            가격대 : <input type="text" name="userID" id ="userID"/> <br>
+                            종류 : <select name = "type" id = "type">
+                                <optgroup label="음식 종류">
+                                    <option value="Korea">한식</option>
+                                    <option value="China">중식</option>
+                                    <option value="Japan">일식</option>
+                                    <option value="Europe">양식</option>
+                            </select> <br>
+                            <input type="button" value="로그인" id ="loginbutton" onclick="checkValue()">
+                            <img src="./img/voca.png" width ="10">
+                            <p>비고 및 평가란</p>
+                            <p>
+                                <textarea name="message" rows="10" cols="30"> </textarea>
+                            </p>
+                        </form>
                     </br>
                 </p>
             </div>
@@ -155,5 +175,6 @@
             <p> 여기는 리스트 꽉차면 1,2,3 페이지 옮기는곳.</p>
         </div>
     </div>
+    
 </body>
 </html>
