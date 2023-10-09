@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Project2</title>
-    <script>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="my.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
         function checkValue(){ 
             var RName = document.getElementById('RName').value;
             var selectedRating = document.querySelector('input[name="Rating"]:checked');
@@ -24,164 +28,72 @@
             alert("게시물이 추가됩니다.")
             document.form1.submit();
         }
-    </script>
-
-    <style>
-        body {
-            font: 100% Lucida Sans, Verdana;
-            margin: 20px;
-            line-height: 26px;
-            background-color: rgb(255, 187, 0);
-        }
-        
-        .container {
-            min-width: 900px;
-        }
-        
-        .wrapper {
-            position: relative;
-            overflow: auto;
-        }
-        
-        #top, #sidebar, #bottom, .menuitem {
-            border-radius: 4px;
-            margin: 4px;
-        }
-        
-        #top {
-            background-color: #222;
-            color: #ffffff;
-            padding: 15px;
-            overflow: hidden;  /* This is added to clear the float */
-        }
-        
-        #menubar {
-            width: 2px;
-            float: left
-        }
-        
-        #main {
-            padding: 10px;
-            margin: 0;
-        }
-        
-        #sidebar {
-            background-color: rgb(111, 0, 255);
-            color: #ffffff;
-            padding: 10px;
-            width: 180px;
-            bottom: 0;
-            top: 0;
-            right: 0;
-            position: absolute;
-        }
-        
-        #top h1, #top p, #menulist {
-            margin: 0;
-            padding: 0;
-        }
-        
-        .menuitem {
-            display: inline-block;
-            background-color: #f1f1f1;
-            border: 1px solid #d4d4d4;
-            padding: 2px 10px;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        
-        .menuitem:hover {
-            background-color: #ffffff;
-        }
-        
-        a {
-            color: #000000;
-            text-decoration: underline;
-        }
-        
-        a:hover {
-            text-decoration: none;
-        }
-        #menulist {
-        float: right;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-        
-        @media (max-width: 800px) {
-            #sidebar {
-                width: auto;
-                position: relative;
-            } 
-            #main {
-                margin-right: 0;
-            }    
-            
-        }
-        
-        @media (max-width: 600px) {
-            #menubar {
-                width: auto;
-                float: none;
-            }
-            #main {
-                margin: 0;
-            }    
-        }
-    </style>
+  </script>
 </head>
 <body>
-    <div class = "container wrapper"> 
-        <div id = "top">
-            <h1 > 21600328's Recommended Restaurants </h1>
-            <ul id="menulist"> 
-            	<li class="menuitem" onclick="location.href='edit.html'" style="color:#000000">Edit</li>
-            	<li class="menuitem" onclick="location.href='Index.html'" style="color:#000000">Index</li>
-        	</ul>  
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand">식당이미지</a>
         </div>
-        <div class = "wrapper"> 
-        
-            <div id="main"> 
-                <h1> Add new restaurant</h1>
-                <p> 
-                    <br> 
-                        <h2>새로운 식당</h2>
-                        <form name="form1" method="post" action="index.html">
-                            식당 이름 : <input type="text" name="RName" id ="RName"/> <br>
-                            별점 : <input type="radio" id="Rating" name="Rating" value="1">★
-                            <input type="radio" id="Rating" name="Rating" value="2">★★
-                            <input type="radio" id="Rating" name="Rating" value="3">★★★
-                            <input type="radio" id="Rating" name="Rating" value="4">★★★★
-                            <input type="radio" id="Rating" name="Rating" value="5">★★★★★ <br>
-                            가격대 : <input type="text" name="Price" id ="Price"/> <br>
-                            종류 : <select name = "type" id = "type">
-                                <optgroup label="음식 종류">
-                                    <option value="Korea">한식</option>
-                                    <option value="China">중식</option>
-                                    <option value="Japan">일식</option>
-                                    <option value="Europe">양식</option>
-                            </select> <br>
-                            <p>비고 및 평가란</p>
-                            <p> <textarea name="message" rows="10" cols="30"> </textarea> </p>
-                            <input type="button" value="추가" id ="loginbutton" onclick="checkValue()">
-                            
-                        </form>
-                    </br>
-                </p>
-            </div>
-            <div id = "sidebar"> 
-                <h1 style= "color: white"> 설명 </h1>
-                <p style= "color: white"> 
-                $ = 1인당 10,000만원 이하 <br>
-                $$ = 1인당 10,000만원 이상 30,000이하 <br>
-                $$$ = 1인당 30,000만원 이상 <br>
-                <br>
-                비고란은 해당 음식점의 특이사항
-                </p>
-            </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="edit.html">Index</a></li>
+            <li class="active"><a href="#">Add</a></li>
+            <li><a href="edit.html">Edit</a></li>
+            <li><a href="view.html">View</a></li>
+          </ul>
         </div>
+      </div>
+    </nav>
+      
+    <div class="container-fluid text-center">    
+      <div class="row content">
+        <div class="col-sm-10 text-left">
+          <h1>21600328's Adding Page</h1>
+          <p></p>
+          <hr>
+          <h3>Add new restaurant</h3>
+          <form name="form1" method="post" action="index.html">
+            식당 이름 : <input type="text" name="RName" id ="RName"/> <br>
+            별점 : <input type="radio" id="Rating" name="Rating" value="1">★
+            <input type="radio" id="Rating" name="Rating" value="2">★★
+            <input type="radio" id="Rating" name="Rating" value="3">★★★
+            <input type="radio" id="Rating" name="Rating" value="4">★★★★
+            <input type="radio" id="Rating" name="Rating" value="5">★★★★★ <br>
+            가격대 : <input type="text" name="Price" id ="Price"/> <br>
+            종류 : <select name = "type" id = "type">
+            <optgroup label="음식 종류">
+              <option value="Korea">한식</option>
+              <option value="China">중식</option>
+              <option value="Japan">일식</option>
+              <option value="Europe">양식</option>
+            </select> <br>
+            <p>비고 및 평가란</p>
+            <p> <textarea name="message" rows="10" cols="30"> </textarea> </p>
+            <input type="button" value="추가" id ="loginbutton" onclick="checkValue()">
+    
+          </form>
+        </div>
+        <div class="col-sm-2 sidenav">
+          <div class="well">
+            <p>가격 <br>
+            $ = 1인당 10,000만원 이하 <br>
+            $$ = 1인당 10,000만원 이상 30,000이하 <br>
+            $$$ = 1인당 30,000만원 이상 <br></p>
+          </div>
+          <div class="well">
+            <p>비고란은 <br> 해당 음식점의 특이사항</p>
+          </div>
+        </div>
+      </div>
     </div>
     
-</body>
-</html>
+    </body>
+    </html>

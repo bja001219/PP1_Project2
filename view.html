@@ -1,204 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0    ">
-    <title>Final Project2</title>
-    <script>
-        function Delete(){ 
-            if (confirm("정말 삭제하시겠습니까?")) {
-                window.location.href = "index.html";
-                document.form1.submit();
-            }else{
-            }
-        }
-    </script>
-    <style>
-        body {
-            font: 100% Lucida Sans, Verdana;
-            margin: 20px;
-            line-height: 26px;
-            background-color: rgb(255, 187, 0);
-        }
-        
-        .container {
-            min-width: 900px;
-        }
-        
-        .wrapper {
-            position: relative;
-            overflow: auto;
-        }
-        
-        #top, #sidebar, #bottom, .menuitem {
-            border-radius: 4px;
-            margin: 4px;
-        }
-        
-        #top {
-            background-color: #222;
-            color: #ffffff;
-            padding: 15px;
-        }
-        
-        #main {
-            padding: 10px;
-            margin: 0;
-        }
-
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid black;
-        }
-
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #ddd;
-        }
-        
-        #sidebar {
-            background-color: rgb(111, 0, 255);
-            font-size: 9px;
-            color: #ffffff;
-            padding: 10px;
-            width: 150px;
-            height: 200px;
-            bottom: 0;
-            top: 0;
-            right: 0;
-            position: absolute;
-        }
-            
-        #bottom {
-            margin-left: 350px;
-            width: 10%;
-            border: 1px solid #d4d4d4;
-            background-color: #999;
-            text-align: center;
-            padding: 1px;
-            font-size: 70%;
-            line-height: 1px;
-        }
-        
-        #top h1, #top p, #menulist {
-            margin: 0;
-            padding: 0;
-        }
-        
-        a {
-            color: #000000;
-            text-decoration: underline;
-        }
-        
-        a:hover {
-            text-decoration: none;
-        }
-        
-        
-        @media (max-width: 800px) {
-            #sidebar {
-                width: auto;
-                position: relative;
-            } 
-            #main {
-                margin-right: 0;
-            }    
-            
-        }
- 
-        .table-buttons {
-          margin-top: 20px;
-          text-align: right;
-        }
-
-        .table-buttons button {
-            background-color: #222;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin: 0 10px;
-            transition: background-color 0.3s;
-        }
-
-        .table-buttons button:hover {
-            background-color: #555;
-        }   
-        
-    </style>
-    
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="my.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    function Delete(){ 
+      if (confirm("정말 삭제하시겠습니까?")) {
+        window.location.href = "index.html";
+        document.form1.submit();
+      }else{
+      }
+    }
+   </script>    
 </head>
 <body>
-    <div class = "container wrapper"> 
-        <div id = "top">
-            <h1 > 21600328's Recommended Restaurants </h1>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand">식당이미지</a>
         </div>
-        <div class = "wrapper"> 
-            <div id="main"> 
-                <h1>식당 1의 디테일</h1>
-                <p> 별점: ★★★★★, 
-                    위치: 서울특별시 강남구... <br>
-                    매장 전화번호: 010-0000-0000 예약 시 전화 주세요<br>
-                    영업시간: 매일 09:00~19:00
-                </p> 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>메뉴 이름</th>
-                            <th>가격</th>
-                            <th>이미지</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>불고기</td>
-                            <td>10,000원</td>
-                        </tr>
-                        <tr>
-                            <td>제육볶음</td>
-                            <td>10,000원</td>
-                        </tr>
-                        <tr>
-                            <td>비빕밥</td>
-                            <td>8,000원</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="table-buttons">
-                    <button onclick="Delete()"> Delete </button>
-                    <button onclick="location.href='edit.html'">Edit</button>
-                    <button onclick="location.href='Index.html'">Index</button>
-                </div>
-            </div>
-            <div id = "sidebar"> 
-                <h1 style= "color: white"> 설명 </h1>
-                <p style= "color: white"> 
-                $ = 1인당 10,000만원 이하 <br>
-                $$ = 1인당 10,000만원 이상 30,000이하 <br>
-                $$$ = 1인당 30,000만원 이상 <br>
-                <br>
-                비고란은 해당 음식점의 특이사항
-                </p>
-            </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Index</a></li>
+            <li><a href="add.html">Add</a></li>
+            <li><a href="edit.html">Edit</a></li>
+            <li class="active"><a href="#">View</a></li>
+          </ul>
         </div>
-        <div id = "bottom">
-            <p> 
-                <a href="1 page">1  </a>
-                <a href="2 page">2  </a>
-                <a href="3 page">3  </a>
-            </p>
+      </div>
+    </nav>
+      
+    <div class="container-fluid text-center">    
+      <div class="row content">
+        <div class="col-sm-10 text-left">
+          <h1 > 21600328's View page </h1>
+          <p></p>
+          <hr>
+          <h3>Restaurant1</h3>
+          <p>
+            <p> 별점: ★★★★★, 
+              위치: 서울특별시 강남구... <br>
+              매장 전화번호: 010-0000-0000 예약 시 전화 주세요<br>
+              영업시간: 매일 09:00~19:00
+            </p> 
+            <table>
+              <thead>
+                <tr>
+                  <th>메뉴 이름</th>
+                  <th>가격</th>
+                  <th>이미지</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>불고기</td>
+                  <td>10,000원</td>
+                </tr>
+                <tr>
+                  <td>제육볶음</td>
+                  <td>10,000원</td>
+                </tr>
+                <tr>
+                  <td>비빕밥</td>
+                  <td>8,000원</td>
+                </tr>
+              </tbody>
+            </table>
         </div>
+        <div class="col-sm-2 sidenav">
+          <div class="well">
+            <p>가격 <br>
+            $ = 1인당 10,000만원 이하 <br>
+            $$ = 1인당 10,000만원 이상 30,000이하 <br>
+            $$$ = 1인당 30,000만원 이상 <br></p>
+          </div>
+          <div class="well">
+            <p>비고란은 <br> 해당 음식점의 특이사항</p>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-</html>
+    
+    </body>
+    </html>
